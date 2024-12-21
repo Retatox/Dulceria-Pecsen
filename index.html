@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa</title>
+    <link rel="stylesheet" href="productos.css">
+    <link rel="stylesheet" href="buscador.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="carrito.css">
+    <link rel="stylesheet" href="contacto.css">
+    <link rel="stylesheet" href="nosotros.css">
+    <link rel="stylesheet" href="ofertas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo de Empresa" class="logo">
+            <h1 class="company-name">Bienvenidos a <span>"Dulceria Pecsen"</span></h1>
+        </div>
+
+    </header>
+
+
+
+    <div class="div-login">
+        <!-- Botón de login -->
+        <button class="btn-login" onclick="showLogin()" aria-expanded="false" aria-controls="login-container">
+            <p>
+        
+                <i class="fa-solid fa-circle-user"></i> 
+            
+            </p>
+        </button>
+
+        <!-- Contenedor del formulario de login -->
+        <div class="login-container" id="login-container" aria-hidden="true">
+            <!-- Botón para cerrar el formulario -->
+            <button class="btn-close-login" onclick="closeLogin()" aria-label="Cerrar formulario de login">
+                <i class="fa-solid fa-x" aria-hidden="true"></i>
+            </button>
+            <!-- Icono decorativo -->
+            <i class="fa-solid fa-caret-up" id="caret-icon" aria-hidden="true"></i>
+
+            <!-- Título del formulario -->
+            <h2>Iniciar sesión</h2>
+
+            <!-- Formulario de inicio de sesión -->
+            <form action="/login" method="POST">
+                <div class="input-group">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required aria-label="Ingrese su usuario">
+                </div>
+                <div class="input-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required aria-label="Ingrese su contraseña">
+                </div>
+                <!-- Botón para enviar el formulario -->
+                <div class="input-group">
+                    <button type="button" class="btn-submit" onclick="llenarDatos()">Iniciar sesión</button>
+                    <!-- Párrafos que mostrarán los datos -->
+                    <p id="user-message" style="display:none;"></p>
+                    <p id="password-message" style="display:none;"></p>
+                </div>
+            </form>
+
+
+
+            <!-- Enlace para registrarse -->
+            <p class="register-link">
+                ¿No tienes cuenta? <a href="registrar.html">Regístrate aquí</a>
+            </p>
+        </div>
+    </div>
+
+    <section class="productos">
+
+        <nav class="div-menu">
+            <ul class="menu">
+
+                <li class="opc-productos">
+                    <div>
+                        <i class="fa-solid fa-box"></i> <a href="index.html">Productos</a>
+                        <i class="fa-solid fa-caret-down" id="caret-icon"></i>
+                    </div>
+
+                    <ul class="submenu">
+                        <li><a href="#" class="filter" data-category="dulces">Dulces</a></li>
+                        <li><a href="#" class="filter" data-category="snacks">Snacks</a></li>
+                        <li><a href="#" class="filter" data-category="bebidas">Bebidas</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-address-card"></i>
+                    <a href="#nosotros">Nosotros</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-address-book"></i>
+                    <a href="#contacto">Contacto</a>
+                </li>
+
+                <li onclick="openTiendas()">
+                    <i class="fa-solid fa-store"></i>
+                    <a href="tiendas.html" id="link-tiendas">Tiendas</a>
+                </li>
+            </ul>
+
+            <div class="menu-hamburguesa" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <div class="buscador">
+                <input type="text" id="product-search" placeholder="Buscar...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            
+
+            <div class="carrito" onclick="mostrarOverlay()">
+                <i class="fa-solid fa-cart-shopping"> </i>
+
+            </div>
+        </nav>
+
+
+        <div class="ofertas">
+
+            <!-- Producto 1 en oferta -->
+            <div class="product product-1 dulces oferta">
+                <img src="img/kingkong.JPG" alt="King Kong">
+                <h3>King Kong</h3>
+                <p class="price">S/. 20.00</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="1"
+                    data-name="King Kong" data-price="20.00" data-img="img/kingkong.JPG">
+                    Agregar
+                </button>
+                <span class="badge">Oferta</span>
+            </div>
+
+            <!-- Producto 2 en oferta -->
+            <div class="product product-2 dulces oferta">
+                <img src="img/turron.JPG" alt="Turrón">
+                <h3>Turrón</h3>
+                <p class="price">S/. 15.00</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="2" data-name="Turrón"
+                    data-price="15.00" data-img="img/turron.JPG">
+                    Agregar
+                </button>
+                <span class="badge">Oferta</span>
+            </div>
+
+            <!-- Producto 3 en oferta -->
+            <div class="product product-3 dulces oferta">
+                <img src="img/alfajores.JPG" alt="Alfajores">
+                <h3>Alfajores</h3>
+                <p class="price">S/. 10.00</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="3"
+                    data-name="Alfajores" data-price="10.00" data-img="img/alfajores.JPG">
+                    Agregar
+                </button>
+                <span class="badge">Oferta</span>
+            </div>
+
+            <!-- Producto 4 en oferta -->
+            <div class="product product-7 dulces oferta">
+                <img src="img/pastel.jpg" alt="Pastel">
+                <h3>Pastel</h3>
+                <p class="price">S/. 25.00</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="7" data-name="Pastel"
+                    data-price="25.00" data-img="img/pastel.jpg">
+                    Agregar
+                </button>
+                <span class="badge">Oferta</span>
+            </div>
+        </div>
+
+
+
+
+        <div class="product-list">
+
+            <!-- Dulces -->
+            <div class="product product-1 dulces">
+                <img src="img/kingkong.JPG" alt="King Kong">
+                <h3>King Kong</h3>
+                <p class="price">S/. 20.00</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="1"
+                    data-name="King Kong" data-price="20.00" data-img="img/kingkong.JPG">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="product product-2 dulces">
+                <img src="img/turron.JPG" alt="Turrón">
+                <h3>Turrón</h3>
+                <p class="price">S/. 15.00</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="2" data-name="Turrón"
+                    data-price="15.00" data-img="img/turron.JPG">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="product product-3 dulces">
+                <img src="img/alfajores.JPG" alt="Alfajores">
+                <h3>Alfajores</h3>
+                <p class="price">S/. 10.00</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="3"
+                    data-name="Alfajores" data-price="10.00" data-img="img/alfajores.JPG">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="product product-4 dulces">
+                <img src="img/manjar.JPG" alt="Manjar Blanco">
+                <h3>Manjar Blanco</h3>
+                <p class="price">S/. 8.00</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="4"
+                    data-name="Manjar Blanco" data-price="8.00" data-img="img/manjar.JPG">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="product product-5 dulces">
+                <img src="img/mani.JPG" alt="Maní Confitado">
+                <h3>Maní Confitado</h3>
+                <p class="price">S/. 5.00</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="5"
+                    data-name="Maní Confitado" data-price="5.00" data-img="img/mani.JPG">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="product product-6 dulces">
+                <img src="img/helado.jpg" alt="Helado">
+                <h3>Helado</h3>
+                <p class="price">S/. 1.00</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="6" data-name="Helado"
+                    data-price="1.00" data-img="img/helado.jpg">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="product product-7 dulces">
+                <img src="img/pastel.jpg" alt="Pastel">
+                <h3>Pastel</h3>
+                <p class="price">S/. 25.00</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="7" data-name="Pastel"
+                    data-price="25.00" data-img="img/pastel.jpg">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="product product-8 dulces">
+                <img src="img/suspiro.jpg" alt="Suspiro">
+                <h3>Suspiro</h3>
+                <p class="price">S/. 18.00</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="8"
+                    data-name="Suspiro" data-price="18.00" data-img="img/suspiro.jpg">
+                    Agregar
+                </button>
+            </div>
+
+            <!-- Snacks -->
+            <div class="product product-9 snacks">
+                <img src="img/chifles.JPG" alt="Chifles">
+                <h3>Chifles</h3>
+                <p class="price">S/. 15.00</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="9"
+                    data-name="Chifles" data-price="15.00" data-img="img/chifles.JPG">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="product product-10 snacks">
+                <img src="img/galletas.JPG" alt="Galletas Especiales">
+                <h3>Galletas Especiales</h3>
+                <p class="price">S/. 5.00</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="10"
+                    data-name="Galletas Especiales" data-price="5.00" data-img="img/galletas.JPG">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="product product-11 snacks">
+                <img src="img/caramelos.webp" alt="Caramelos">
+                <h3>Caramelos</h3>
+                <p class="price">S/. 7.00</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="11"
+                    data-name="Caramelos" data-price="7.00" data-img="img/caramelos.webp">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="product product-12 snacks">
+                <img src="img/chocolate.webp" alt="Chocolate">
+                <h3>Chocolate</h3>
+                <p class="price">S/. 12.00</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="12"
+                    data-name="Chocolate" data-price="12.00" data-img="img/chocolate.webp">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="product product-13 snacks">
+                <img src="img/bizcocho.JPG" alt="Bizcocho">
+                <h3>Bizcocho</h3>
+                <p class="price">S/. 14.00</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="13"
+                    data-name="Bizcocho" data-price="14.00" data-img="img/bizcocho.JPG">
+                    Agregar
+                </button>
+            </div>
+
+            <!-- Bebidas -->
+            <div class="product product-14 bebidas">
+                <img src="img/gaseosa.jpg" alt="Gaseosa">
+                <h3>Gaseosa</h3>
+                <p class="price">S/. 3.00</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="14"
+                    data-name="Gaseosa" data-price="3.00" data-img="img/gaseosa.jpg">
+                    Agregar
+                </button>
+            </div>
+
+            <div class="product product-15 bebidas">
+                <img src="img/agua.jpg" alt="Agua">
+                <h3>Agua</h3>
+                <p class="price">S/. 1.50</p>
+                <button onclick="mostrarOverlay()" class="cart-button agregar-al-carrito" data-id="15" data-name="Agua"
+                    data-price="1.50" data-img="img/agua.jpg">
+                    Agregar
+                </button>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <div class="overlay">
+        <div class="div-carrito">
+            <header>
+                <button class="cerrar-carrito" onclick="cerrarOverlay()">
+                    <i class="fa-solid fa-x"></i>
+                </button>
+                <p>Mi carrito</p>
+            </header>
+
+
+            <div class="lista-productos">
+
+            </div>
+
+            <footer class="subtotal">
+                <div>
+                    <p>Subtotal</p>
+                    <p class="PrectioProductoTotal">S/. 0.00</p>
+                </div>
+                <button><a href="pago.html">Realizar pedido</a></button>
+            </footer>
+
+
+
+
+
+            </script>
+
+        </div>
+    </div>
+
+
+
+
+    <section id="nosotros">
+        <div class="contenedor">
+            <h2>Sobre Dulcería Pecsen</h2>
+            <p>En <strong>Dulcería Pecsen</strong>, nos dedicamos a ofrecer una experiencia dulce única para cada uno de
+                nuestros clientes. Nuestra pasión por la confitería nos ha llevado a crear productos innovadores y
+                deliciosos, siempre con ingredientes de la más alta calidad.</p>
+
+            <p>Desde nuestros inicios, nos hemos comprometido a brindar dulces que alegren cada momento, combinando
+                tradición y modernidad en cada receta. Creemos que la calidad es clave, por lo que trabajamos con
+                proveedores locales para asegurar productos frescos y genuinos, mientras apoyamos la economía local.</p>
+
+            <h3>¿Qué nos hace diferentes?</h3>
+            <ul>
+                <li><strong>Innovación:</strong> Siempre buscamos nuevas formas de sorprenderte.</li>
+                <li><strong>Compromiso:</strong> Nos importa tu satisfacción y la calidad de cada dulce.</li>
+                <li><strong>Sostenibilidad:</strong> Adoptamos prácticas responsables con el medio ambiente.</li>
+            </ul>
+
+        </div>
+    </section>
+    <div class="container-form">
+    <div class="info-form">
+        <h2>Comunícate con nosotros</h2>
+        <p>¿Tienes alguna pregunta o comentario? ¡Nos encantaría saber de ti! Déjanos un mensaje y nos pondremos en contacto contigo lo antes posible.</p>
+        <div class="contact-info">
+            <a href="#"><i class="fa fa-phone"></i> 96315826</a>
+            <a href="mailto:email@tudominio.com"><i class="fa fa-envelope"></i> DulceriaPecsen@gmail.com</a>
+            <a href="#"><i class="fa fa-map-marker-alt"></i> Chiclayo, Peru</a>
+        </div>
+    </div>
+    <!-- Agregar id="formulario-contacto" para identificar el formulario -->
+    <form id="formulario-contacto" action="javascript:void(0);" autocomplete="off">
+        <input type="text" name="nombre" placeholder="Tu Nombre" class="campo" required>
+        <input type="email" name="email" placeholder="Tu Email" class="campo" required>
+        <textarea name="mensaje" placeholder="Tu Mensaje..." required></textarea>
+        <input type="submit" name="enviar" value="Enviar Mensaje" class="btn-enviar">
+    </form>
+</div>
+
+
+<div id="mensaje-confirmacion" style="display:none;">
+    <p>¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.</p>
+</div>
+
+    <!-- Footer con el id "contacto" -->
+    <footer id="contacto">
+        <p>&copy; 2024 Dulceria Pecsen San Roque. Todos los Derechos del Autor son reservados</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank" class="social-icon"><i
+                    class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+
+
+    <script src="main.js"></script>
+    <script src="jquery.js"></script>
+    <script src="tiendas.html"></script>
+</body>
+
+</html>

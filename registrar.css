@@ -1,0 +1,154 @@
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 80%;
+    max-width: 1000px;
+}
+
+
+/* Sección de registro */
+.register {
+    width: 45%;
+}
+
+.register h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.btn-register {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-register:hover {
+    background-color: #0056b3;
+}
+
+/* Sección de inicio de sesión */
+.login {
+    width: 45%;
+}
+
+.login h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.login-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.btn-social i {
+    margin-right: 15px;
+}
+
+.btn-social:hover {
+    background-color: #f0f0f0;
+}
+
+.fb {
+    color: #3b5998;
+    border-color: #3b5998;
+}
+
+.fb:hover {
+    background-color: #3b5998;
+    color: white;
+}
+
+.tw {
+    color: #1da1f2;
+    border-color: #1da1f2;
+}
+
+.tw:hover {
+    background-color: #1da1f2;
+    color: white;
+}
+
+.correo {
+    color: #333;
+    border-color: #333;
+}
+
+.correo:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* Media Query para pantallas con un ancho máximo de 720px */
+@media (max-width: 720px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .register, .login {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .input-group input {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .btn-register, .btn-social {
+        font-size: 14px;
+        padding: 10px;
+    }
+}

@@ -1,0 +1,261 @@
+.div-menu {
+    background-color: #323f5e;
+    padding: 10px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 4em;
+    display: flex;
+    align-items: center;
+
+}
+
+li:hover {
+    border-radius: 4px;
+    background-color: #f4b400;
+    color: #2d2d2d;
+}
+
+li:hover a {
+    color: #2d2d2d;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+
+}
+
+.menu li {
+    position: relative;
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+    margin: 0px 5px;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.menu li:hover {
+    background-color: #f4b400;
+    color: #202c59;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #414d6c;
+    list-style: none;
+    width: 200px;
+    padding: 10px 0;
+}
+
+.menu li:hover .submenu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.submenu li a {
+    padding: 10px 20px;
+    display: block;
+    color: #f0f0f0;
+}
+
+.submenu li:hover {
+    background-color: #4e5974;
+    border-radius: 4px;
+}
+
+.submenu li:hover a {
+    color: white;
+}
+
+.opc-productos {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.opc-productos div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.opc-productos .fa-caret-down,
+.opc-productos .fa-caret-up {
+    display: none;
+    position: absolute;
+    right: 20px;
+}
+
+.menu-hamburguesa{
+    display: none;
+    font-size: 1.8rem;
+    color: #fff;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+
+
+.carrito{
+    font-size: 1.8rem;
+    color: #fff;
+    padding: 1rem;
+    cursor: pointer;
+    position: relative;
+
+  
+}
+
+.carrito #carrito{
+    display: none;
+}
+
+.carrito:hover #carrito{
+    display: block;
+    position: absolute;
+    right: 0%;
+    top: 100%;
+    z-index: 1;
+    background-color: #2a272b;
+    padding: 20px;
+    min-width: 400px;
+}
+
+table{
+    width: 100%;
+    
+}
+th, td{
+    color: #fff;
+}
+
+.borrar{
+    
+    background-color: #f44336;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    background-color: #323f5e;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.menu.active li {
+    margin: 10px 0;
+}
+
+@media (max-width: 720px) {
+
+    .menu {
+        display: none;
+        gap: 0;
+
+    }
+
+    .menu .fa-solid {
+        color: white;
+    }
+
+
+    .opc-productos li{
+        padding: 0px;
+    }
+    
+    .menu li{
+        border-bottom: 2px solid #414d6c;
+
+    }
+    .submenu li {
+        border-bottom: 2px solid #414d6c;
+        padding: 0px;
+    }
+
+    .menu li:hover {
+        background-color: #414d6c;
+    }
+
+    .opc-productos .submenu {
+        display: none;
+        position: static;
+        background-color: #414d6c;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .submenu:hover {
+        background-color: #323f5e;
+    }
+
+    .menu-hamburguesa {
+        display: block;
+        position: static;
+        top: 0;
+        left: 0;
+    }
+
+    .opc-productos {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 10px 0;
+    }
+
+    .opc-productos .fa-caret-down,
+    .opc-productos .fa-caret-up {
+        display: block;
+    }
+
+    .opc-productos div {
+        display: flex;
+        justify-content: start;
+    }
+
+    li:hover a {
+        color: white;
+    }
+
+    .div-menu{
+        align-items: center;
+        justify-content: center;
+        padding: 10px 0%;
+
+    }
+
+    .div-menu li:hover .fa-solid {
+        color: white;
+    }
+
+    .submenu li:hover {
+        background-color: #414d6c;
+        border-radius: 4px;
+        color: white;
+    }
+
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Registro e Inicio de Sesión</title>
+    <link rel="stylesheet" href="registrar.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Sección de registro -->
+        <div class="register">
+            <h2>Registrarse</h2>
+            <form action="/register" method="POST">
+
+
+
+                <div class="input-group">
+                    <label for="nombre">
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                </div>
+                <div class="input-group">
+                    <label for="apellidos">
+                        <input type="text" id="apellidos" name="apellidos" placeholder="Apellidos" required>
+                </div>
+                <div class="input-group">
+                    <label for="correo">
+                        <input type="email" id="correo" name="correo" placeholder="Correo" required>
+                </div>
+                <div class="input-group">
+                    <label for="pass">
+                        <input type="password" id="pass" name="pass" placeholder="Contraseña" required>
+                </div>
+                <div class="input-group">
+                    <label for="repass">
+                        <input type="password" id="repass" name="repass" placeholder="Confirma contraseña" required>
+                </div>
+                <a href="index.html">
+                    <button type="button" class="btn-register">Registrarse</button>
+                </a>
+
+
+            </form>
+        </div>
+
+
+        <!-- Sección de inicio de sesión -->
+        <div class="login">
+            <h2>Iniciar Sesión</h2>
+            <div class="login-items">
+                <button class="btn-social fb" aria-label="Acceder con Facebook">
+                    <i class="fab fa-facebook-f"></i> Acceder con Facebook
+                </button>
+                <button class="btn-social tw" aria-label="Acceder con Twitter">
+                    <i class="fab fa-twitter"></i> Acceder con Twitter
+                </button>
+                <button class="btn-social correo" aria-label="Acceder con Correo">
+                    <i class="fas fa-envelope"></i> Acceder con Correo
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

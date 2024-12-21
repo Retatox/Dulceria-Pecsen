@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+}
+
+.container-form {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 40px 15px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+}
+
+.info-form {
+    text-align: center; /* Centra el texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container-form h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #222;
+    font-weight: 600;
+}
+
+.container-form p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.contact-info a {
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #ff7f3f;
+}
+
+.contact-info a i {
+    color: #ff7f3f;
+    margin-right: 8px;
+}
+
+.container-form form .campo, 
+textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.container-form form .campo:focus, 
+textarea:focus {
+    border-color: #ff7f3f;
+    box-shadow: 0 0 5px rgba(255, 127, 63, 0.3);
+}
+
+.container-form form textarea {
+    min-height: 120px;
+}
+
+.container-form .btn-enviar {
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #ff7f3f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container-form .btn-enviar:hover {
+    background-color: #ff6a1f;
+}
+
+@media (max-width: 768px) {
+    .container-form {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .container-form h2 {
+        font-size: 1.5rem;
+    }
+
+    .container-form p {
+        font-size: 0.9rem;
+    }
+
+    .container-form form .campo, 
+    textarea {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    .container-form .btn-enviar {
+        font-size: 0.9rem;
+    }
+}
+#mensaje-confirmacion {
+    display: none;  /* Inicialmente oculto */
+    position: fixed;
+    top: 10px;  /* Coloca el mensaje a 10px del borde superior */
+    left: 50%;
+    transform: translateX(-50%);  /* Centra el mensaje horizontalmente */
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    z-index: 1000;
+}
+

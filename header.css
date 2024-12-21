@@ -1,0 +1,39 @@
+header {
+    background-color: #202c59;
+    color: #fff;
+    padding: 15px 20px;
+    text-align: center;
+    padding: 30px;
+
+}
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.company-name {
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+.company-name span {
+    color: #f4b400;
+}
+
+@media (max-width: 720px) {
+    .logo-container{
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,45 @@
+/* Sección Nosotros */
+#nosotros {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+#nosotros .contenedor {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#nosotros h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #222;
+    font-weight: 600;
+}
+
+#nosotros p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    color: #666;
+}
+
+#nosotros ul {
+    list-style-type: none;
+    margin-top: 15px;
+    padding-left: 0;
+}
+
+#nosotros ul li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+#nosotros .imagen img {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+    border-radius: 4px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+}
